@@ -10,3 +10,5 @@ Simple platform for online courses. Users are able to log in, create new courses
 * Subscibing to courses
 * Unsubscribing from courses
 * List of subscribers
+
+[Database diagram](https://github.com/Aleksipa/online_course_platfrom/blob/master/Screenshot%202020-03-17%20at%2018.58.02.png)
