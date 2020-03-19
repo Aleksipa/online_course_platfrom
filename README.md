@@ -13,5 +13,6 @@ Simple platform for online courses. Users are able to log in, create new courses
 
 [Database diagram](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/Screenshot%202020-03-17%20at%2018.58.02.png)
 
+[Heroku app](https://online-course-platform.herokuapp.com/)
 
-[Link to app](https://online-course-platform.herokuapp.com/)
+[User stories](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/user_stories.md)
