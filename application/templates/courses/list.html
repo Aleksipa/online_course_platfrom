@@ -4,10 +4,17 @@
   <table>
     <tr>
       <th>Course</th>
+      <th>Subscribe</th>
     </tr>
     {% for course in courses %}
     <tr>
       <td>{{ course.name }}</td>
+      <td>{{ course.done }}</td>
+      <td>
+        <form method="POST" action="{{ url_for('courses_set_done', course_id=course.id) }}">
+          <input type="submit" value="Subscribe!"/>
+        </form>
+      </td>
     </tr>
     {% endfor %}
   </table>
