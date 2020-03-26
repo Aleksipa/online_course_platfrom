@@ -47,7 +47,7 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 # Luodaan lopulta tarvittavat tietokantataulut
-#try: 
+try: 
     db.create_all()
-#except:
-#    pass
+except:
+    pass
