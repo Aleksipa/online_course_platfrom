@@ -16,3 +16,7 @@ Simple platform for online courses. Users are able to log in, create new courses
 [Heroku app](https://online-course-platform.herokuapp.com/)
 
 [User stories](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/user_stories.md)
+
+### test credentials
+username: hello
+password: world
