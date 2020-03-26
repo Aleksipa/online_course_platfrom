@@ -12,10 +12,10 @@ import os
 
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-#else:    
-#    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///courses.db"
+else:    
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///courses.db"
     # Pyydetään SQLAlchemyä tulostamaan kaikki SQL-kyselyt
-#    app.config["SQLALCHEMY_ECHO"] = True
+    app.config["SQLALCHEMY_ECHO"] = True
 
 # Luodaan db-olio, jota käytetään tietokannan käsittelyyn
 db = SQLAlchemy(app)
