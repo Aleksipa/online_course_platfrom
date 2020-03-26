@@ -25,6 +25,9 @@ def courses_set_done(course_id):
 @app.route("/courses/", methods=["POST"])
 def courses_create():
     form = CourseForm(request.form)
+
+    if not form.validate():
+        return render_template("courses/new.html", form = form)
     
     t = Course(form.name.data)
 
