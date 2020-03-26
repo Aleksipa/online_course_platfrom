@@ -22,5 +22,7 @@ from application.courses import models
 
 from application.courses import views
 
+from application.auth import models 
+
 # Luodaan lopulta tarvittavat tietokantataulut
 db.create_all()
