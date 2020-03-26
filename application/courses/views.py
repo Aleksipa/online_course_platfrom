@@ -1,6 +1,9 @@
-from application import app, db
 from flask import redirect, render_template, request, url_for
+
+from application import app, db
 from application.courses.models import Course
+from application.courses.forms import CourseForm
+
 
 @app.route("/courses", methods=["GET"])
 def courses_index():
@@ -8,7 +11,7 @@ def courses_index():
 
 @app.route("/courses/new/")
 def courses_form():
-    return render_template("courses/new.html")
+    return render_template("courses/new.html", form = CourseForm())
 
 @app.route("/courses/<course_id>/", methods=["POST"])
 def courses_set_done(course_id):
@@ -21,7 +24,9 @@ def courses_set_done(course_id):
 
 @app.route("/courses/", methods=["POST"])
 def courses_create():
-    t = Course(request.form.get("name"))
+    form = CourseForm(request.form)
+    
+    t = Course(form.name.data)
 
     db.session().add(t)
     db.session().commit()
