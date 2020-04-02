@@ -29,7 +29,7 @@ class User(Base):
         return True
 
     @staticmethod
-    def find_users_with_no_subscription(done=0):
+    def find_users_with_no_subscription(done='0'):
         stmt = text("SELECT Account.id, Account.name FROM Account"
                      " LEFT JOIN Course ON Course.account_id = Account.id"
                      " WHERE (Course.done IS null OR Course.done = :done)"
