@@ -13,11 +13,14 @@ class User(Base):
 
     tasks = db.relationship("Course", backref='account', lazy=True)
   
-    def get_id(self, name):
+    def __init__(self, name):
          self.name = name
 
-    def is_active(self):
+    def get_id(self):
         return self.id
+
+    def is_active(self):
+        return True
 
     def is_anonymous(self):
         return False
