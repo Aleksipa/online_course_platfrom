@@ -1,6 +1,19 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <p>
-  </p>
+{% if needs_courses is defined %}  
+<p>
+  The following users don't have any subscriptions
+</p>
+
+<ul>
+  {% for user in needs_courses %}
+  <li>
+    {{user.id}} {{user.name}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
 {% endblock %}

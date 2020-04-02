@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "/Users/aleksipaavola/Documents/online-course-platform"
+		}
+	],
+	"settings": {
+		"python.pythonPath": "venv/bin/python3"
+	}
+}
