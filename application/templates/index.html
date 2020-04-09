@@ -1,19 +1,14 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{% if needs_courses is defined %}  
+<H1>
+  Welcome to our online course platform!
+</H1>
 <p>
-  The following users don't have any subscriptions
+  Take a look at our course catalogue. We might have an interesting course for you!
 </p>
-
-<ul>
-  {% for user in needs_courses %}
-  <li>
-    {{user.id}} {{user.name}}
-  </li>
-  {% endfor %}
-</ul>
-
-{% endif %}
+<button>
+  <a href="/courses">Get started</a>
+</button>
 
 {% endblock %}

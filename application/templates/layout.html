@@ -17,16 +17,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('courses_index') }} ">List courses</a>
           </li>
+          {% if current_user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('courses_form') }} ">Add a course</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('your_courses_index') }} ">Your courses</a>
+          </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">
-          {% if current_user.is_authenticated %}
-          <p>
+          <p style="color:white;">
 	        Hello {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Sign out</a>
           </p>
           {% else %}
+          <div class="form-inline mt-2 mt-md-0">
           <a href="{{ url_for('auth_login') }}">Sign in</a> 
           {% endif %}
         </div>

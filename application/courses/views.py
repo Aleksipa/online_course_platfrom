@@ -1,5 +1,6 @@
 from flask import redirect, render_template, request, url_for
 from flask_login import current_user
+from application.auth.models import User
 
 from application import app, db, login_required
 from application.courses.models import Course
@@ -40,3 +41,7 @@ def courses_create():
     db.session().commit()
   
     return redirect(url_for("courses_index"))
+
+@app.route("/your_courses", methods=["GET"])
+def your_courses_index():
+	return render_template("courses/your_courses.html", your_courses=User.find_users_subscriptions())

@@ -34,12 +34,12 @@ class User(Base):
             return self.urole
 
     @staticmethod
-    def find_users_with_no_subscription(done='0'):
-        stmt = text("SELECT Account.id, Account.name FROM Account"
-                     " LEFT JOIN Course ON Course.account_id = Account.id"
-                     " WHERE (Course.done IS null OR Course.done = :done)"
-                     " GROUP BY Account.id"
-                     " HAVING COUNT(Course.id) = 0").params(done=done)
+    def find_users_subscriptions(done='1'):
+        stmt = text("SELECT Course.id, Course.name FROM Course"
+                     " LEFT JOIN Account ON Course.account_id = Account.id"
+                     " WHERE (Course.done = :done)"
+                     " GROUP BY Course.id"
+                     " HAVING COUNT(*) > 0").params(done=done)
         res = db.engine.execute(stmt)
 
         response = []
