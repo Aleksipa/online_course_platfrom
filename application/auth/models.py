@@ -10,11 +10,13 @@ class User(Base):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+    urole = db.Column(db.String(80), nullable=False)
 
     tasks = db.relationship("Course", backref='account', lazy=True)
   
-    def __init__(self, name):
+    def __init__(self, name, urole):
          self.name = name
+         self.urole = urole
 
     def get_id(self):
         return self.id
@@ -27,6 +29,9 @@ class User(Base):
 
     def is_authenticated(self):
         return True
+
+    def get_urole(self):
+            return self.urole
 
     @staticmethod
     def find_users_with_no_subscription(done='0'):

@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 from application.courses.models import Course
 from application.courses.forms import CourseForm
 
@@ -26,7 +26,7 @@ def courses_set_done(course_id):
     return redirect(url_for("courses_index"))
 
 @app.route("/courses/", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def courses_create():
     form = CourseForm(request.form)
 
