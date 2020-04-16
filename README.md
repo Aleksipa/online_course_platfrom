@@ -1,15 +1,14 @@
 # Online course platfrom
 
-Simple platform for online courses. Users are able to log in, create new courses and modify the courses they have created. Courses can contain text and images. Users are also able to browse through the courses others have made and sign in to courses. In the future versions payment gateway could be implemented which would enable course creators to collect payments from course partisipants.
+Simple platform for online courses. Users are able to browse through the courses others have made and subscribe to courses. Admin users are able to create new courses and modify the courses they have created. Courses can contain text and images. In the future versions payment gateway could be implemented which would enable course creators to collect payments from course partisipants.
 
 ## Features:
 
 * User login
 * Course creation, modification and deletion
 * Course browsing
-* Subscibing to courses
-* Unsubscribing from courses
-* List of subscribers
+* Subscribing to courses
+* List of courses you have subscribed to
 
 [Database diagram](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/Screenshot%202020-03-17%20at%2018.58.02.png)
 
@@ -17,6 +16,10 @@ Simple platform for online courses. Users are able to log in, create new courses
 
 [User stories](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/user_stories.md)
 
-### test credentials
+### test credentials admin user
 * username: hello
+* password: world
+
+### test credentials normal user
+* username: test
 * password: world
