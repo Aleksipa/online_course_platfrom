@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{% if your_courses is defined %}  
+{% if my_courses is defined %}  
 <p>
   Here is a list of all the courses you have subscribed to:
 </p>
 
 <ul>
-  {% for user in your_courses %}
+  {% for user in my_courses %}
   <li>
     {{user.id}} {{user.name}}
   </li>

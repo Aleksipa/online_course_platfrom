@@ -17,12 +17,14 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('courses_index') }} ">List courses</a>
           </li>
-          {% if current_user.is_authenticated %}
+          {% if current_user.urole == "ADMIN" %}
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('courses_form') }} ">Add a course</a>
           </li>
+          {% endif %}
+          {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('your_courses_index') }} ">Your courses</a>
+            <a class="nav-link" href="{{ url_for('my_courses_index') }} ">My courses</a>
           </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">

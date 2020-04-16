@@ -42,6 +42,6 @@ def courses_create():
   
     return redirect(url_for("courses_index"))
 
-@app.route("/your_courses", methods=["GET"])
-def your_courses_index():
-	return render_template("courses/your_courses.html", your_courses=User.find_users_subscriptions())
+@app.route("/my_courses", methods=["GET"])
+def my_courses_index():
+	return render_template("courses/my_courses.html", my_courses=User.find_users_subscriptions())
