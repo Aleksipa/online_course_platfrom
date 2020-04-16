@@ -15,6 +15,13 @@
           <input type="submit" value="Subscribe!"/>
         </form>
       </td>
+      {% if current_user.urole == "ADMIN" %}
+      <td>
+        <form method="POST" action="{{ url_for('courses_remove', course_id=course.id) }}">
+          <input type="submit" value="Remove"/>
+        </form>
+      </td>
+      {% endif %}
     </tr>
     {% endfor %}
   </table>

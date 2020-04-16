@@ -45,3 +45,13 @@ def courses_create():
 @app.route("/my_courses", methods=["GET"])
 def my_courses_index():
 	return render_template("courses/my_courses.html", my_courses=User.find_users_subscriptions())
+
+@app.route("/courses_remove/<course_id>/", methods=["POST"])
+@login_required(role="ADMIN")
+def courses_remove(course_id):
+
+    c = Course.query.get(course_id)
+    db.session().delete(c)
+    db.session().commit()
+  
+    return redirect(url_for("courses_index"))
