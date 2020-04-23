@@ -16,6 +16,10 @@ Simple platform for online courses. Users are able to browse through the courses
 
 [User stories](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/user_stories.md)
 
+[User manual](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/manual.md)
+
+[Database description](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/database.md)
+
 ### test credentials admin user
 * username: hello
 * password: world
