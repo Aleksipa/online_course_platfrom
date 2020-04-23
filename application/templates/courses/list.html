@@ -18,7 +18,7 @@
       {% if current_user.urole == "ADMIN" %}
       <td>
         <form method="POST" action="{{ url_for('courses_remove', course_id=course.id) }}">
-          <input type="submit" value="Remove"/>
+          <input type="submit" value="Delete"/>
         </form>
       </td>
       {% endif %}
