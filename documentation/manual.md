@@ -12,18 +12,22 @@ INSERT INTO account (name, username, password, urole) VALUES ('Testi', 'test', '
 
 List the courses by clicking the List courses button
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/list_courses.png" width="400">
+<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/list_courses.png" width="600">
 
-## log in
+## logging in
 
 Log in by clicking sign in link. If you list the courses after loggin in, you are able to subscribe to courses.
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/sign_in.png" width="400">
+<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/sign_in.png" width="600">
 
 ## As a logged in user see all the courses you have subscribed to
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/my_courses.png" width="400">
+After logging in, click My courses button in order to see all the courses you have subscribed to.
+
+<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/my_courses.png" width="600">
 
 ## As a ADMIN user create a new course
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/add_course.png" width="400">
+Create a new course by clicking Add a course button
+
+<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/add_course.png" width="600">
