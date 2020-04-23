@@ -10,8 +10,6 @@ Simple platform for online courses. Users are able to browse through the courses
 * Subscribing to courses
 * List of courses you have subscribed to
 
-[Database diagram](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/Screenshot%202020-03-17%20at%2018.58.02.png)
-
 [Heroku app](https://online-course-platform.herokuapp.com/)
 
 [User stories](https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/user_stories.md)
