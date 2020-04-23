@@ -2,7 +2,7 @@
 
 ## Database diagram
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/Screenshot%202020-03-17%20at%2018.58.02.png" width="400">
+<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/Screenshot%202020-03-17%20at%2018.58.02.png" width="600">
 
 ## Create user statements
 
