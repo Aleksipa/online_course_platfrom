@@ -54,6 +54,7 @@ from application.auth import views
 
 # login functionality, part 2
 from application.auth.models import User
+from os import urandom
 
 @login_manager.user_loader
 def load_user(user_id):

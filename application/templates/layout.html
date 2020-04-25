@@ -27,18 +27,17 @@
             <a class="nav-link" href="{{ url_for('my_courses_index') }} ">My courses</a>
           </li>
         </ul>
-        <div class="form-inline mt-2 mt-md-0">
-          <p style="color:white;">
-	        Hello {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Sign out</a>
-          </p>
-          {% else %}
-          <div class="form-inline mt-2 mt-md-0">
-          <a href="{{ url_for('auth_login') }}">Sign in</a> 
-          {% endif %}
+        <div class="form-inline mt-2 mt-md-0 text-white">
+	        Hello {{ current_user.name }}. <a class="form-inline mt-2 mt-md-0 pl-3" href="{{ url_for('auth_logout') }}">Sign out</a>
         </div>
-      </div>
+          {% else %}
+        </div>
+          <li class="nav-item form-inline mt-2 mt-md-0">
+          <a class="form-inline mr-2" href="{{ url_for('auth_login') }}">Sign in</a>;  
+          <a href="{{ url_for('auth_register') }}">Register</a>
+          </li>
+          {% endif %} 
     </nav>
-
     <main role="main" class="container">
       {% block body %}
       <p>
@@ -46,7 +45,6 @@
       </p>
       {% endblock %}
     </main>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

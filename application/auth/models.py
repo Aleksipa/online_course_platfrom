@@ -14,8 +14,10 @@ class User(Base):
 
     tasks = db.relationship("Course", backref='account', lazy=True)
   
-    def __init__(self, name, urole):
+    def __init__(self, name, username, password, urole):
          self.name = name
+         self.username = username
+         self.password = password
          self.urole = urole
 
     def get_id(self):
