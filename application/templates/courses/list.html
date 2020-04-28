@@ -9,9 +9,9 @@
     {% for course in courses %}
     <tr>
       <td>{{ course.name }}</td>
-      <td>{{ course.done }}</td>
+      <td>{{ course.subscribe }}</td>
       <td>
-        <form method="POST" action="{{ url_for('courses_set_done', course_id=course.id) }}">
+        <form method="POST" action="{{ url_for('courses_set_subscribe', course_id=course.id) }}">
           <input type="submit" value="Subscribe!"/>
         </form>
       </td>

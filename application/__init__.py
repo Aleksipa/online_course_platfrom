@@ -52,6 +52,9 @@ from application.courses import views
 from application.auth import models 
 from application.auth import views
 
+from application.materials import models
+from application.materials import views
+
 # login functionality, part 2
 from application.auth.models import User
 from os import urandom

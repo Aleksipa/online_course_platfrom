@@ -1,6 +1,5 @@
 from application import db
 from application.models import Base
-
 from sqlalchemy.sql import text
 
 class User(Base):
@@ -12,7 +11,7 @@ class User(Base):
     password = db.Column(db.String(144), nullable=False)
     urole = db.Column(db.String(80), nullable=False)
 
-    tasks = db.relationship("Course", backref='account', lazy=True)
+    courses = db.relationship("Course", backref='account', lazy=True)
   
     def __init__(self, name, username, password, urole):
          self.name = name
@@ -36,12 +35,12 @@ class User(Base):
             return self.urole
 
     @staticmethod
-    def find_users_subscriptions(done='1'):
+    def find_users_subscriptions(subscribe='1'):
         stmt = text("SELECT Course.id, Course.name FROM Course"
                      " LEFT JOIN Account ON Course.account_id = Account.id"
-                     " WHERE (Course.done = :done)"
+                     " WHERE (Course.subscribe = :subscribe)"
                      " GROUP BY Course.id"
-                     " HAVING COUNT(*) > 0").params(done=done)
+                     " HAVING COUNT(*) > 0").params(subscribe=subscribe)
         res = db.engine.execute(stmt)
 
         response = []

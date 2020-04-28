@@ -6,7 +6,6 @@ from application import app, db, login_required
 from application.courses.models import Course
 from application.courses.forms import CourseForm
 
-
 @app.route("/courses", methods=["GET"])
 def courses_index():
 	return render_template("courses/list.html", courses = Course.query.all())
@@ -18,10 +17,10 @@ def courses_form():
 
 @app.route("/courses/<course_id>/", methods=["POST"])
 @login_required
-def courses_set_done(course_id):
+def courses_set_subscribe(course_id):
 
-    t = Course.query.get(course_id)
-    t.done = True
+    c = Course.query.get(course_id)
+    c.subscribe = True
     db.session().commit()
   
     return redirect(url_for("courses_index"))
@@ -34,10 +33,10 @@ def courses_create():
     if not form.validate():
         return render_template("courses/new.html", form = form)
     
-    t = Course(form.name.data)
-    t.account_id = current_user.id
+    c = Course(form.name.data)
+    c.account_id = current_user.id
 
-    db.session().add(t)
+    db.session().add(c)
     db.session().commit()
   
     return redirect(url_for("courses_index"))
