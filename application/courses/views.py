@@ -23,7 +23,7 @@ def courses_set_subscribe(course_id):
     c.subscribe = True
     db.session().commit()
   
-    return redirect(url_for("courses_index"))
+    return render_template("courses/description.html", course = c)
 
 @app.route("/courses/", methods=["POST"])
 @login_required(role="ADMIN")
@@ -33,7 +33,10 @@ def courses_create():
     if not form.validate():
         return render_template("courses/new.html", form = form)
     
-    c = Course(form.name.data)
+    name = form.name.data
+    description = form.description.data
+
+    c = Course(name, description)
     c.account_id = current_user.id
 
     db.session().add(c)
@@ -54,3 +57,10 @@ def courses_remove(course_id):
     db.session().commit()
   
     return redirect(url_for("courses_index"))
+
+@app.route("/courses/<course_id>", methods=["GET"])
+def course_info(course_id):
+
+    course = Course.query.get_or_404(course_id)
+    
+    return render_template("courses/description.html", course = course)

@@ -38,3 +38,10 @@ def material_create():
     db.session().commit()
   
     return redirect(url_for("courses_index"))
+
+@app.route("/materials/<course_id>", methods=["GET"])
+def material_info(course_id):
+
+    material = Material.query.get_or_404(course_id)
+    
+    return render_template("materials/material.html", material = material)

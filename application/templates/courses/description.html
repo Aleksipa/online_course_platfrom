@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form method="GET" action="{{ url_for('courses_index') }}">
+            <input type="submit" value="Back"/>
+    </form>
+    <h2>{{course.name}}</h2>
+    <table>
+        <tr>
+            <td>{{course.description}}</td> 
+        </tr>
+        <td>{{ course.subscribe }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('courses_set_subscribe', course_id=course.id) }}">
+              <input type="submit" value="Subscribe!"/>
+            </form>
+          </td>
+    </table>
+{% endblock %}

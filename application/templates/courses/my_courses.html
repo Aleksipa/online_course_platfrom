@@ -1,19 +1,30 @@
 {% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block body %}
+<table>
+  
 {% if my_courses is defined %}  
-<p>
-  Here is a list of all the courses you have subscribed to:
-</p>
-
-<ul>
+<tr>
+  <th>Here is a list of all the courses you have subscribed to:</th>
+</tr>
   {% for user in my_courses %}
-  <li>
-    {{user.id}} {{user.name}}
-  </li>
-  {% endfor %}
-</ul>
+  <tr>
+    <td>{{user.id}} {{user.name}}</td>
 
+  {% endfor %}
+  {% for course in my_courses %}
+  
+  <th>
+    <form method="GET" action="{{ url_for('material_info', course_id = course.id) }}">
+      <input type="submit" class="btn btn-outline-primary btn-sm" value="Go to course material" />
+    </form>
+  </th>
+    
+  </tr>
+
+  {% endfor %}
 {% endif %}
+</table>
 
 {% endblock %}

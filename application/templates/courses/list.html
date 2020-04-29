@@ -4,15 +4,13 @@
   <table>
     <tr>
       <th>Course</th>
-      <th>Subscribe</th>
     </tr>
     {% for course in courses %}
     <tr>
       <td>{{ course.name }}</td>
-      <td>{{ course.subscribe }}</td>
       <td>
-        <form method="POST" action="{{ url_for('courses_set_subscribe', course_id=course.id) }}">
-          <input type="submit" value="Subscribe!"/>
+        <form method="GET" action="{{ url_for('course_info', course_id = course.id) }}">
+          <input type="submit" class="btn btn-outline-primary btn-sm" value="Read more" />
         </form>
       </td>
       {% if current_user.urole == "ADMIN" %}

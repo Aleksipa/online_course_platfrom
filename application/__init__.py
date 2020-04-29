@@ -1,5 +1,8 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
+
 app = Flask(__name__)
+Bootstrap(app)
 
 # database connectivity and ORM
 from flask_sqlalchemy import SQLAlchemy
