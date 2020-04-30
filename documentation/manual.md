@@ -28,6 +28,6 @@ After logging in, click My courses button in order to see all the courses you ha
 
 ## As a ADMIN user create a new course
 
-Create a new course by clicking Add a course button. As a admin level user it's also possible to delete or modify the courses and add course material to courses.
+Create a new course by clicking Add a course button. As a admin level user it's also possible to delete or modify the courses and add course material to courses. Always remember to add course material to courses you have created!
 
 <img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/add_course.png" width="600">
