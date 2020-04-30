@@ -10,24 +10,17 @@ Normal users can register throught the register link.
 
 ## List all the courses
 
-List the courses by clicking the List courses button
+List the courses by clicking the Course catalog button
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/list_courses.png" width="600">
 
-## logging in
+## register and log in
 
-Log in by clicking sign in link. If you list the courses after loggin in, you are able to subscribe to courses.
+Register by clicking the register button. After registation, click the sign in link and sign in with the username and password you created. 
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/sign_in.png" width="600">
+## As a logged in user subscribe to courses and see all the courses and course materials you have subscribed to
 
-## As a logged in user see all the courses you have subscribed to
+If you click the course catalog, you will see all the courses. By clicking read more you'll get to the course page. In the course page, you are able to subscribe to the course. After subscribing to course you can see the course listed in the my courses page. You can go to course materials by clicking "go to course material" button.
 
-After logging in, click My courses button in order to see all the courses you have subscribed to.
+## As a ADMIN user create a new course, modify existing courses, add course material to courses and delete courses.
 
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/my_courses.png" width="600">
-
-## As a ADMIN user create a new course
-
-Create a new course by clicking Add a course button. As a admin level user it's also possible to delete or modify the courses and add course material to courses. Always remember to add course material to courses you have created!
-
-<img src="https://github.com/Aleksipa/online_course_platfrom/blob/master/documentation/add_course.png" width="600">
+Create a new course by clicking Add a course button. As an admin level user it's also possible to delete or modify the courses and add course material to courses. Always remember to add course material to courses you have created!
