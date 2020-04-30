@@ -46,7 +46,7 @@ class User(Base):
 
     @staticmethod
     def find_users_subscriptions(user_id):
-        stmt = text("SELECT Course.name FROM Course "
+        stmt = text("SELECT Course.id, Course.name FROM Course "
         + " LEFT JOIN Subs ON Course.id = Subs.course_id "
         + " LEFT JOIN Account ON Account.id = Subs.account_id "
         + " WHERE Subs.account_id = :user_id "
@@ -56,6 +56,6 @@ class User(Base):
 
         response = []
         for row in res:
-            response.append({"name":row[0]})
+            response.append({"id":row[0], "name":row[1]})
 
         return response

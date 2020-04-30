@@ -42,6 +42,6 @@ def material_create():
 @app.route("/materials/<course_id>", methods=["GET"])
 def material_info(course_id):
 
-    material = Material.query.get_or_404(course_id)
+    material = Material.query.filter_by(id=course_id).first_or_404()
     
     return render_template("materials/material.html", material = material)
