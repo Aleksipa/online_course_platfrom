@@ -9,7 +9,6 @@
         <tr>
             <td>{{course.description}}</td> 
         </tr>
-        <td>{{ course.subscribe }}</td>
         <td>
             <form method="POST" action="{{ url_for('courses_set_subscribe', course_id=course.id) }}">
               <input type="submit" value="Subscribe!"/>

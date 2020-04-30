@@ -5,6 +5,7 @@ from application.auth.models import User
 from application import app, db, login_required
 from application.courses.models import Course
 from application.courses.forms import CourseForm
+from application.auth.models import subs
 
 @app.route("/courses", methods=["GET"])
 def courses_index():
@@ -19,11 +20,14 @@ def courses_form():
 @login_required
 def courses_set_subscribe(course_id):
 
-    c = Course.query.get(course_id)
-    c.subscribe = True
-    db.session().commit()
+    c = course_id
+    u = current_user.id
+
+    statement = subs.insert().values(account_id=u, course_id=c)
+    db.session.execute(statement)
+    db.session.commit()
   
-    return render_template("courses/description.html", course = c)
+    return redirect(url_for("courses_index"))
 
 @app.route("/courses/", methods=["POST"])
 @login_required(role="ADMIN")
@@ -46,7 +50,8 @@ def courses_create():
 
 @app.route("/my_courses", methods=["GET"])
 def my_courses_index():
-	return render_template("courses/my_courses.html", my_courses=User.find_users_subscriptions())
+    user_id = current_user.id
+    return render_template("courses/my_courses.html", my_courses = User.find_users_subscriptions(user_id))
 
 @app.route("/courses_remove/<course_id>/", methods=["POST"])
 @login_required(role="ADMIN")

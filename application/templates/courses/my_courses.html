@@ -8,22 +8,19 @@
 <tr>
   <th>Here is a list of all the courses you have subscribed to:</th>
 </tr>
-  {% for user in my_courses %}
-  <tr>
-    <td>{{user.id}} {{user.name}}</td>
-
-  {% endfor %}
+  <body>
+    <tr>
   {% for course in my_courses %}
-  
-  <th>
+  <td>{{ course.name }}</td>
+  <td>
     <form method="GET" action="{{ url_for('material_info', course_id = course.id) }}">
       <input type="submit" class="btn btn-outline-primary btn-sm" value="Go to course material" />
     </form>
-  </th>
-    
-  </tr>
-
+  </td>
+    </tr>
   {% endfor %}
+  </tr>
+  </body>
 {% endif %}
 </table>
 
