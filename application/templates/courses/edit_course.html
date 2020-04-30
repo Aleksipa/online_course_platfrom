@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<h2>Edit course</h2>
+<form method="POST" action="{{url_for('edit_course', course_id=course_id)}}">
+  <table>
+      <tr>
+	      <td>
+	        {{ form.name.label }}
+	      </td>
+	      <td>
+	        {{ form.name }}
+        </td>
+        <td>
+          <ul>
+            {% for error in form.name.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+        <td>
+	        {{ form.description.label }}
+	      </td>
+	      <td>
+	        {{ form.description }}
+        </td>
+        <td>
+          <ul>
+            {% for error in form.description.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    </tr>
+      <tr>
+	      <td colspan="2">
+	        <input type="submit" value="Save"/>
+	      </td>
+      </tr>
+</form>
+{% endblock %}

@@ -77,3 +77,28 @@ def course_info(course_id):
     course = Course.query.get_or_404(course_id)
     
     return render_template("courses/description.html", course = course)
+
+@app.route("/courses/edit/<course_id>", methods=["GET"])
+@login_required(role="ADMIN")
+def courses_editform(course_id):
+    courseToEdit = Course.query.get_or_404(course_id)
+
+    form=CourseForm(formdata=request.form, obj=courseToEdit)
+    return render_template("courses/edit_course.html", form = form, course_id=course_id)
+
+@app.route("/courses/edit/<course_id>/", methods=["POST"])
+@login_required(role="ADMIN")
+def edit_course(course_id):
+
+    courseToEdit = Course.query.get_or_404(course_id)
+
+    form=CourseForm(formdata=request.form, obj=courseToEdit)
+    
+    if form.validate():
+        courseToEdit.name=form.name.data
+        courseToEdit.description=form.description.data
+
+        db.session().commit()
+        return redirect(url_for("courses_index"))
+    else:
+        return render_template("courses/edit_course.html", form = form)

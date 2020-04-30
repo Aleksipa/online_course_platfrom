@@ -15,8 +15,13 @@
       </td>
       {% if current_user.urole == "ADMIN" %}
       <td>
-        <form method="DELETE" action="{{ url_for('courses_remove', course_id=course.id) }}">
+        <form method="DELETE" action="{{ url_for('courses_remove', course_id = course.id) }}">
           <input type="submit" value="Delete"/>
+        </form>
+      </td>
+      <td>
+        <form method="GET" action="{{ url_for('courses_editform', course_id = course.id) }}">
+          <input type="submit" value="Edit"/>
         </form>
       </td>
       {% endif %}
