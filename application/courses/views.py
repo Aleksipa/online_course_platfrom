@@ -6,6 +6,7 @@ from application import app, db, login_required
 from application.courses.models import Course
 from application.courses.forms import CourseForm
 from application.auth.models import subs
+from application.materials.models import Material
 
 @app.route("/courses", methods=["GET"])
 def courses_index():
@@ -53,12 +54,19 @@ def my_courses_index():
     user_id = current_user.id
     return render_template("courses/my_courses.html", my_courses = User.find_users_subscriptions(user_id))
 
-@app.route("/courses_remove/<course_id>/", methods=["POST"])
+@app.route("/courses_remove/<course_id>/", methods=["DELETE", "GET"])
 @login_required(role="ADMIN")
 def courses_remove(course_id):
 
-    c = Course.query.get(course_id)
-    db.session().delete(c)
+    course_to_delete = Course.query.get_or_404(course_id)
+
+    if course_to_delete.material:
+        for material in reversed(course_to_delete.material):
+            db.session().commit()
+            db.session().delete(material)
+            db.session().commit()
+
+    db.session().delete(course_to_delete)
     db.session().commit()
   
     return redirect(url_for("courses_index"))
